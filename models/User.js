@@ -6,7 +6,12 @@ const userSchema = new Schema(
     {
         username: { type: String, required: true },
         email: { type: String, required: true },
-        thoughts: [thoughtSchema]
+        thoughts: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'thought'
+            }
+        ]
     },
 )
 
